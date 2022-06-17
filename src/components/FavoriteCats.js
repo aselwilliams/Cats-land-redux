@@ -1,10 +1,24 @@
-import React from 'react'
+import {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {addToLocal} from '../actions';
+import { nanoid } from 'nanoid';
+
 
 function FavoriteCats() {
+  const [inputVal,setInputVal]=useState('');
+const dispatch=useDispatch()
+
+  const handleAdd=()=>{
+    dispatch({
+      type:addToLocal,
+      payload:{id:nanoid(),text:inputVal}
+    })
+    setInputVal('');
+  }
   return (
     <div className="third-column">
     <section className="input-container">
-        <form action="#">
+        <form onSubmit={handleAdd}>
             <input type="text" id="input-fact" placeholder="Add Cats Facts"/>
             <button id="add-btn">ADD</button>
         </form>
