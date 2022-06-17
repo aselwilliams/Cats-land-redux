@@ -8,7 +8,7 @@ function CatsFromAPI({apiCats}) {
     <div className="api-container">
 {apiCats.map((cat,index)=>{
     return(
-        <div id="fetch-data" key={cat.id}>{index+1}. ${cat.text}</div>
+        <div id="fetch-data" key={cat._id}>{index+1}. ${cat.text}</div>
     )
 })}
         {/* <!-- <div id="fetch-data"></div> --> */}
