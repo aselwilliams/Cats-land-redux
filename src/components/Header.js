@@ -3,8 +3,8 @@ import React from 'react'
 function Header() {
   return (
     <header>
-    <div class="row">
-        <h1 class="title">CATS-LAND
+    <div className="row">
+        <h1 className="title">CATS-LAND
             <img src="https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="kittens" />
         </h1>
     </div>
