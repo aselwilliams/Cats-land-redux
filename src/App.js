@@ -5,8 +5,7 @@ import FavoriteCats from './components/FavoriteCats';
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 const animal = "cat"; //dog, horse
-const catsURL = `https://cat-fact.herokuapp.com/facts/random?animal_type=${animal}&amount=`;
-const amount = 15;
+const catsURL = `https://cat-fact.herokuapp.com/facts/random?animal_type=${animal}&amount=15`;
 
 function App() {
 const [localCats,setLocalCats]=useState([])
