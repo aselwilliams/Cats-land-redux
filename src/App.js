@@ -1,9 +1,10 @@
 import Header from './components/Header'
-import './App.css';
+
 
 function App() {
   return (
   <div className='main-container'>
+    <Header />
     <main>
        <section className="bg-color">
             <strong>Cats from API</strong>
