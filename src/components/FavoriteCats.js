@@ -2,25 +2,26 @@ import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {addToLocal} from '../actions';
 import { nanoid } from 'nanoid';
+import LocalCats from './LocalCats';
 
 
 function FavoriteCats() {
   const [inputVal,setInputVal]=useState('');
-const dispatch=useDispatch()
+  const [localCats,setLocalCats]=useState([])
+  const dispatch=useDispatch()
 
   const handleAdd=(e)=>{
     e.preventDefault()
-    dispatch({
-      type:addToLocal,
-      payload:{id:nanoid(),text:inputVal}
-    })
+ const newCat={id: nanoid, text:inputVal}
+ setLocalCats([...localCats,newCat])
     setInputVal('');
   }
+  
   return (
     <div className="third-column">
     <section className="input-container">
         <form onSubmit={handleAdd}>
-            <input type="text" id="input-fact" placeholder="Add Cats Facts" onChange={(e)=>setInputVal(e.target.value)}/>
+            <input value={inputVal} type="text" id="input-fact" placeholder="Add Cats Facts" onChange={(e)=>setInputVal(e.target.value)}/>
             <button id="add-btn">ADD</button>
         </form>
     </section>

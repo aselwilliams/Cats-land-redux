@@ -8,16 +8,17 @@ const animal = "cat"; //dog, horse
 const catsURL = `https://cat-fact.herokuapp.com/facts/random?animal_type=${animal}&amount=15`;
 
 function App() {
-const [localCats,setLocalCats]=useState([])
+
+const [apiCats,setApiCats]=useState([])
 
 useEffect(()=>{
-  axios.get(catsURL).then((res)=>setLocalCats(res.data))
+  axios.get(catsURL).then((res)=>setApiCats(res.data))
 },[])
   return (
   <div className='main-container'>
     <Header />
     <main>
-      <CatsFromAPI localCats={localCats}/>
+      <CatsFromAPI apiCats={apiCats}/>
       <LocalCats />
       <FavoriteCats />
     </main>
