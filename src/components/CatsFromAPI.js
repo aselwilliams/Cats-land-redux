@@ -11,7 +11,6 @@ function CatsFromAPI({apiCats}) {
         <div id="fetch-data" key={cat._id}>{index+1}. ${cat.text}</div>
     )
 })}
-        {/* <!-- <div id="fetch-data"></div> --> */}
     </div>
 </section>
   )

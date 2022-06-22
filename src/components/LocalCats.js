@@ -8,12 +8,10 @@ function LocalCats() {
     const dispatch=useDispatch()
 
     const handleFavorite=(el)=>{
-        // const newFav=localFacts.map((el)=>el.id===id)
         dispatch({type: addToFav,payload: el})
     }
   
     const handleDelete=(id)=>{
-        // const newList=localFacts.filter((el)=> el.id!==item.id)
         dispatch({type:deleteLocal, payload:id})
     }
   return (

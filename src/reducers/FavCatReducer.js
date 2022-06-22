@@ -1,6 +1,5 @@
 import * as actions from '../actions'
 import {addToFav,deleteFav} from '../actions'
-import React from 'react'
 
 const FavCatReducer = (state=[], action) => {
  switch(action.type){

@@ -14,6 +14,7 @@ const [apiCats,setApiCats]=useState([])
 useEffect(()=>{
   axios.get(catsURL).then((res)=>setApiCats(res.data))
 },[])
+
   return (
   <div className='main-container'>
     <Header />
@@ -22,8 +23,6 @@ useEffect(()=>{
       <LocalCats />
       <FavoriteCats />
     </main>
-
-
   </div>
   );
 }
