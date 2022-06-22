@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import CatsReducer from './reducers/CatsReducer'
+import allReducers from './reducers'
 
-let store=createStore(
-  CatsReducer,
+export const store=createStore(
+  allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
