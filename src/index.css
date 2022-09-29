@@ -111,3 +111,7 @@ button#add-btn {
   margin-top: 25px;
   height: 150vh;
 }
+
+.like {
+  color: crimson;
+}

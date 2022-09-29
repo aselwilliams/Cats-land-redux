@@ -1,4 +1,3 @@
-import * as actions from '../actions'
 import {addToFav,deleteFav} from '../actions'
 
 const FavCatReducer = (state=[], action) => {
