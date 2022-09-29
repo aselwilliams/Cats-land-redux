@@ -10,10 +10,10 @@ function Header() {
             alt="kitten"
           />
         </div>
-        <h1 className="title">CATS-LAND</h1>
+        <h1 className="title">CATS LAND</h1>
       </div>
       <div>
-        <p id="alert-msg">Some Alert</p>
+        <p id="alert-msg"></p>
       </div>
     </header>
   );
