@@ -4,8 +4,13 @@ function Header() {
   return (
     <header>
     <div className="row">
+    <div>
+          <img
+            src="https://schertzanimalhospital.com/wp-content/uploads/2018/01/Schertz_iStock-657331484-1024x629.jpg"
+            alt="kitten"
+          />
+        </div>
         <h1 className="title">CATS-LAND
-            <img src="https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="kittens" />
         </h1>
     </div>
     <div>

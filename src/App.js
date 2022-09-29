@@ -15,13 +15,25 @@ useEffect(()=>{
   axios.get(catsURL).then((res)=>setApiCats(res.data))
 },[])
 
+const alert = document.getElementById("alert-msg");
+function display_alert(text, classType) {
+  alert.classList.add(classType);
+  alert.innerText = text;
+  alert.style.visibility = "visible";
+
+  setTimeout(() => {
+    alert.classList.remove(classType);
+    alert.style.visibility = "hidden";
+  }, 4000);
+}
+
   return (
   <div className='main-container'>
     <Header />
     <main>
       <CatsFromAPI apiCats={apiCats}/>
-      <LocalCats />
-      <FavoriteCats />
+      <LocalCats display_alert={display_alert} />
+      <FavoriteCats display_alert={display_alert}/>
     </main>
   </div>
   );

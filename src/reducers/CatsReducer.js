@@ -1,4 +1,4 @@
-import { addToLocal,deleteLocal } from "../actions";
+import { addToLocal,deleteLocal, markLiked } from "../actions";
 import * as actions from '../actions'
 
 const CatsReducer=(state=[],action)=>{
@@ -7,6 +7,10 @@ const CatsReducer=(state=[],action)=>{
         return [...state, action.payload]
         case deleteLocal:
             return state.filter((el)=>el.id!==action.payload)
+        case markLiked:
+            return state.map((item) =>
+            item.id === action.payload ? { ...item, liked: !item.liked } : item
+            );
     default:
         return state
     }

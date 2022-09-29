@@ -22,3 +22,9 @@ export const deleteFav=(id)=>{
         payload: id
     }
 }
+export const markLiked=(id)=>{
+    return {
+        type: 'MARK_LIKED',
+        payload: id
+    }
+}

@@ -29,6 +29,8 @@ header {
 .row {
   display: flex; 
   flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
   width: 50vw;
   margin: 15px;
 }
@@ -83,6 +85,7 @@ section.bg-color {
   margin: 5px;
   padding: 5px;
   overflow: auto;
+  text-align: left;
 }
 
 .local-cat {

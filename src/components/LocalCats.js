@@ -1,18 +1,21 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {FaTrashAlt, FaRegHeart} from 'react-icons/fa';
-import {deleteLocal, addToFav} from '../actions'
+import {FaTrashAlt, FaHeart} from 'react-icons/fa';
+import {deleteLocal, addToFav, markLiked} from '../actions'
 
-function LocalCats() {
+function LocalCats({display_alert}) {
     const localFacts=useSelector((state)=>state.localFacts)
     const dispatch=useDispatch()
 
     const handleFavorite=(el)=>{
         dispatch({type: addToFav,payload: el})
+        display_alert("Fact Added to Favorites", "green")
+        dispatch({ type: markLiked, payload: el.id });
     }
   
     const handleDelete=(id)=>{
         dispatch({type:deleteLocal, payload:id})
+        display_alert("Local Fact Deleted", "red")
     }
   return (
     <section className="bg-color">
@@ -29,7 +32,7 @@ function LocalCats() {
                   className="btn btn-success"
                   onClick={() => handleFavorite(el)}
                 >
-                  <FaRegHeart />
+                  <FaHeart className={el.liked === true ? "like" : ""} />
                 </button>
                 <button
                   id="del-btn"

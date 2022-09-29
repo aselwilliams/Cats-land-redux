@@ -3,22 +3,22 @@ import {useDispatch,useSelector} from 'react-redux';
 import {addToLocal,deleteFav} from '../actions';
 import { nanoid } from 'nanoid';
 import {store} from '../index'
-import * as actions from '../actions';
 import { FaRegTrashAlt} from 'react-icons/fa'
 
 
-function FavoriteCats() {
+function FavoriteCats({display_alert}) {
   const [inputVal,setInputVal]=useState('');
 
   const dispatch=useDispatch()
- const favFacts=useSelector((state)=>state.favFacts)
+  const favFacts=useSelector((state)=>state.favFacts)
 
 console.log(favFacts, 'favFacts')
 
   const handleAdd=(e)=>{
     e.preventDefault()
- const newCat={id: nanoid(), text:inputVal}
+ const newCat={id: nanoid(), text:inputVal, liked: false}
  dispatch({type:addToLocal, payload:newCat})
+ display_alert("New Cats Fact Added!", "green");
     setInputVal('');
   }
 
@@ -26,6 +26,7 @@ console.log(favFacts, 'favFacts')
 dispatch({
   type: deleteFav, payload: id
 })
+display_alert("Favorite Fact Deleted!", "red");
   }
   console.log(store.getState())
   return (
